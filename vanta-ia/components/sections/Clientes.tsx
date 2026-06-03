@@ -44,14 +44,20 @@ export default function Clientes() {
 
       {/* ── Marquee ─────────────────────────────────────────────────── */}
       <div className="marquee-track relative overflow-hidden">
-        {/* Fades laterales */}
+        {/* Fades laterales — cubren hasta el margen del contenedor max-w-6xl + px-6 */}
         <div
-          className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10"
-          style={{ background: "linear-gradient(to right, #000000, transparent)" }}
+          className="pointer-events-none absolute left-0 top-0 bottom-0 z-10"
+          style={{
+            width: "calc((100vw - min(100vw, 72rem)) / 2 + 1.5rem + 3rem)",
+            background: "linear-gradient(to right, #000000 65%, transparent)",
+          }}
         />
         <div
-          className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10"
-          style={{ background: "linear-gradient(to left, #000000, transparent)" }}
+          className="pointer-events-none absolute right-0 top-0 bottom-0 z-10"
+          style={{
+            width: "calc((100vw - min(100vw, 72rem)) / 2 + 1.5rem + 3rem)",
+            background: "linear-gradient(to left, #000000 65%, transparent)",
+          }}
         />
 
         {/* Fila 1 — izquierda */}

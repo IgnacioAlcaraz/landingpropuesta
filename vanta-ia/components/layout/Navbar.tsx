@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { nav, WA_LINK } from "@/content/copy";
 
@@ -31,20 +30,7 @@ export default function Navbar() {
         `}
       >
         <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Logotipo */}
-          <a href="/" className="flex items-center gap-2.5 select-none">
-            <Image
-              src="/logo-avanta.jpeg"
-              alt="Avanta Labs"
-              width={32}
-              height={32}
-              className="rounded-sm object-contain"
-            />
-            <span className="text-xl font-semibold tracking-tight">
-              {nav.brand.prefix}
-              <span className="text-[#5F9ED2]">{nav.brand.suffix}</span>
-            </span>
-          </a>
+          <div />
 
           {/* Links desktop */}
           <ul className="hidden md:flex items-center gap-8">
