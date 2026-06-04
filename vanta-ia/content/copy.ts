@@ -5,7 +5,7 @@ export const WA_LINK =
   "https://api.whatsapp.com/send/?phone=5492226486414&text&type=phone_number&app_absent=0";
 
 export const nav = {
-  brand: { prefix: "Avanta", suffix: "Labs" },
+  brand: { prefix: "Octoflow", suffix: "Labs" },
   links: [
     { label: "Servicios", href: "#servicios" },
     { label: "Proceso",   href: "#proceso"   },
@@ -196,7 +196,7 @@ export const ctaFinal = {
 } as const;
 
 export const footer = {
-  brand: { prefix: "Avanta", suffix: "Labs" },
+  brand: { prefix: "Octoflow", suffix: "Labs" },
   tagline: "Automatización con IA para empresas en Argentina y LATAM.",
   links: [
     { label: "Servicios", href: "#servicios" },
@@ -206,7 +206,7 @@ export const footer = {
   ],
   socials: [
     { label: "LinkedIn",  href: "#" },
-    { label: "Instagram", href: "https://instagram.com/avantalabs" },
+    { label: "Instagram", href: "https://instagram.com/octoflowlabs" },
   ],
   copy: "© 2025 · Hecho en Argentina",
 } as const;

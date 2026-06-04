@@ -9,11 +9,11 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-const BASE_URL = "https://avantalabs.netlify.app";
+const BASE_URL = "https://octoflowlabs.netlify.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title: "Agentes de IA para Empresas en Argentina | Avanta Labs",
+  title: "Agentes de IA para Empresas en Argentina | Octoflow Labs",
   description:
     "Implementamos agentes de inteligencia artificial que atienden clientes, cierran ventas y generan reportes automáticos. Soluciones de IA para PYMEs y empresas medianas en Argentina y LATAM. Implementación en 2 semanas.",
   keywords: [
@@ -32,17 +32,17 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   openGraph: {
-    title: "Agentes de IA para Empresas en Argentina | Avanta Labs",
+    title: "Agentes de IA para Empresas en Argentina | Octoflow Labs",
     description:
       "Implementamos agentes de IA que atienden clientes, cierran ventas y generan reportes automáticos. Para PYMEs y empresas medianas en Argentina y LATAM.",
     url: BASE_URL,
-    siteName: "Avanta Labs",
+    siteName: "Octoflow Labs",
     locale: "es_AR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agentes de IA para Empresas | Avanta Labs",
+    title: "Agentes de IA para Empresas | Octoflow Labs",
     description:
       "Automatizá tu empresa con agentes de IA para ventas, atención al cliente y reportería. Implementación en 2 semanas.",
   },
@@ -64,7 +64,7 @@ const schemaOrg = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: "Avanta Labs",
+      name: "Octoflow Labs",
       url: BASE_URL,
       description:
         "Agencia especializada en implementación de agentes de inteligencia artificial para PYMEs y empresas medianas en Argentina y LATAM.",
@@ -81,7 +81,7 @@ const schemaOrg = {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
       url: BASE_URL,
-      name: "Avanta Labs",
+      name: "Octoflow Labs",
       publisher: { "@id": `${BASE_URL}/#organization` },
       inLanguage: "es-AR",
     },
@@ -89,7 +89,7 @@ const schemaOrg = {
       "@type": "WebPage",
       "@id": `${BASE_URL}/#webpage`,
       url: BASE_URL,
-      name: "Agentes de IA para Empresas en Argentina | Avanta Labs",
+      name: "Agentes de IA para Empresas en Argentina | Octoflow Labs",
       isPartOf: { "@id": `${BASE_URL}/#website` },
       about: { "@id": `${BASE_URL}/#organization` },
       description:

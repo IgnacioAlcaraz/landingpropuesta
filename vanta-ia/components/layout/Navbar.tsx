@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Button from "@/components/ui/Button";
+import Logo from "@/components/ui/Logo";
 import { nav, WA_LINK } from "@/content/copy";
 
 export default function Navbar() {
@@ -30,7 +31,7 @@ export default function Navbar() {
         `}
       >
         <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div />
+          <Logo size="md" />
 
           {/* Links desktop */}
           <ul className="hidden md:flex items-center gap-8">

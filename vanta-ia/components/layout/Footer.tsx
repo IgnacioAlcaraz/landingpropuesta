@@ -1,3 +1,4 @@
+import Logo from "@/components/ui/Logo";
 import { footer } from "@/content/copy";
 
 export default function Footer() {
@@ -7,6 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Col 1 — Marca */}
           <div className="flex flex-col gap-3">
+            <Logo size="sm" />
             <p className="text-sm text-[var(--muted)] max-w-[220px] leading-relaxed">
               {footer.tagline}
             </p>

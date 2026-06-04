@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://avantalabs.netlify.app/sitemap.xml",
+    sitemap: "https://octoflowlabs.netlify.app/sitemap.xml",
   };
 }
