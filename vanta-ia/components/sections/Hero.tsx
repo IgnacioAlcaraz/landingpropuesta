@@ -32,7 +32,7 @@ function SplitWords({ text, delay = 0 }: { text: string; delay?: number }) {
   );
 }
 
-/* ── Stat card with spring pop-in ─────────────────────────────────── */
+/* ── Stat card ────────────────────────────────────────────────────── */
 function StatCard({
   value,
   label,
@@ -53,10 +53,8 @@ function StatCard({
       transition={{ type: "spring", stiffness: 130, damping: 16, delay }}
       className="flex flex-col gap-1"
     >
-      <span className="text-2xl font-semibold text-white">{value}</span>
-      <span className="text-[13px]" style={{ color: "var(--muted)" }}>
-        {label}
-      </span>
+      <span className="text-2xl font-semibold text-[var(--ink)]">{value}</span>
+      <span className="text-[13px] text-[var(--slate)]">{label}</span>
     </motion.div>
   );
 }
@@ -64,44 +62,44 @@ function StatCard({
 /* ── Hero ─────────────────────────────────────────────────────────── */
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pt-20">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[var(--cloud)] pt-20">
 
       {/* Dot grid */}
       <div className="hero-grid pointer-events-none absolute inset-0" />
 
-      {/* Radial mask que oscurece los bordes del grid */}
+      {/* Radial mask que suaviza los bordes del grid */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 85% 55% at 50% 45%, transparent 25%, #000000 100%)",
+            "radial-gradient(ellipse 85% 55% at 50% 45%, transparent 25%, #F7F8FC 100%)",
         }}
       />
 
-      {/* Orb 1 — celeste top-right */}
+      {/* Orb 1 — violeta top-right */}
       <div
         className="orb-drift-1 pointer-events-none absolute -top-48 -right-48 w-[900px] h-[900px]"
         style={{
           background:
-            "radial-gradient(ellipse, rgba(95,158,210,0.22) 0%, transparent 62%)",
+            "radial-gradient(ellipse, rgba(103,87,255,0.14) 0%, transparent 62%)",
         }}
       />
 
-      {/* Orb 2 — navy bottom-left */}
+      {/* Orb 2 — lavanda bottom-left */}
       <div
         className="orb-drift-2 pointer-events-none absolute -bottom-48 -left-48 w-[700px] h-[700px]"
         style={{
           background:
-            "radial-gradient(ellipse, rgba(30,52,70,0.7) 0%, transparent 65%)",
+            "radial-gradient(ellipse, rgba(237,234,255,0.7) 0%, transparent 65%)",
         }}
       />
 
-      {/* Orb 3 — celeste center-right sutil */}
+      {/* Orb 3 — violeta center sutil */}
       <div
-        className="orb-drift-1 pointer-events-none absolute top-1/2 right-1/3 w-[450px] h-[450px] opacity-30"
+        className="orb-drift-1 pointer-events-none absolute top-1/2 right-1/3 w-[450px] h-[450px] opacity-40"
         style={{
           background:
-            "radial-gradient(ellipse, rgba(95,158,210,0.18) 0%, transparent 70%)",
+            "radial-gradient(ellipse, rgba(103,87,255,0.10) 0%, transparent 70%)",
           animationDelay: "-9s",
         }}
       />
@@ -110,9 +108,9 @@ export default function Hero() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
         <div className="flex flex-col items-start gap-7 max-w-3xl">
 
-          {/* Badge con shimmer */}
+          {/* Badge */}
           <motion.span
-            className="shimmer-badge animate-float inline-block px-4 py-1.5 rounded-full text-[13px] font-medium text-[#5F9ED2]"
+            className="shimmer-badge animate-float inline-block px-4 py-1.5 rounded-full text-[13px] font-medium text-[var(--flow-violet)]"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1 }}
@@ -121,10 +119,9 @@ export default function Hero() {
           </motion.span>
 
           {/* H1 */}
-          <h1 className="text-[38px] sm:text-[52px] lg:text-[64px] font-light leading-[1.05] tracking-[-0.04em] text-white">
+          <h1 className="text-[38px] sm:text-[52px] lg:text-[64px] font-light leading-[1.05] tracking-[-0.04em] text-[var(--ink)]">
             <SplitWords text={hero.h1Line1} delay={0.2} />
             <br />
-            {/* Línea 2: bloque completo con gradient animado */}
             <span className="inline-block overflow-hidden">
               <motion.span
                 className="gradient-text font-semibold inline-block"
@@ -147,8 +144,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.72 }}
-            className="text-[15px] leading-relaxed max-w-xl"
-            style={{ color: "var(--muted)" }}
+            className="text-[15px] leading-relaxed max-w-xl text-[var(--slate)]"
           >
             {hero.subtitle}
           </motion.p>
@@ -171,8 +167,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="mt-16 pt-8"
-          style={{ borderTop: "0.5px solid var(--border)" }}
+          className="mt-16 pt-8 border-t border-[var(--border)]"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {hero.stats.map((stat, i) => (

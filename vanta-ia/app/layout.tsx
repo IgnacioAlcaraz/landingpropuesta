@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+﻿import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
@@ -15,18 +15,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: "Agentes de IA para Empresas en Argentina | Octoflow Labs",
   description:
-    "Implementamos agentes de inteligencia artificial que atienden clientes, cierran ventas y generan reportes automáticos. Soluciones de IA para PYMEs y empresas medianas en Argentina y LATAM. Implementación en 2 semanas.",
+    "Implementamos agentes de inteligencia artificial que atienden clientes, cierran ventas y generan reportes automÃ¡ticos. Soluciones de IA para PYMEs y empresas medianas en Argentina y LATAM. ImplementaciÃ³n en 2 semanas.",
   keywords: [
     "agentes de IA para empresas",
-    "automatización con inteligencia artificial",
+    "automatizaciÃ³n con inteligencia artificial",
     "chatbot de ventas Argentina",
-    "agente de atención al cliente IA",
-    "automatización empresarial Argentina",
+    "agente de atenciÃ³n al cliente IA",
+    "automatizaciÃ³n empresarial Argentina",
     "IA para PYMEs",
     "inteligencia artificial para empresas LATAM",
     "chatbot WhatsApp empresa",
-    "reportería automatizada IA",
-    "implementación IA Argentina",
+    "reporterÃ­a automatizada IA",
+    "implementaciÃ³n IA Argentina",
   ],
   alternates: {
     canonical: BASE_URL,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Agentes de IA para Empresas en Argentina | Octoflow Labs",
     description:
-      "Implementamos agentes de IA que atienden clientes, cierran ventas y generan reportes automáticos. Para PYMEs y empresas medianas en Argentina y LATAM.",
+      "Implementamos agentes de IA que atienden clientes, cierran ventas y generan reportes automÃ¡ticos. Para PYMEs y empresas medianas en Argentina y LATAM.",
     url: BASE_URL,
     siteName: "Octoflow Labs",
     locale: "es_AR",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Agentes de IA para Empresas | Octoflow Labs",
     description:
-      "Automatizá tu empresa con agentes de IA para ventas, atención al cliente y reportería. Implementación en 2 semanas.",
+      "AutomatizÃ¡ tu empresa con agentes de IA para ventas, atenciÃ³n al cliente y reporterÃ­a. ImplementaciÃ³n en 2 semanas.",
   },
   robots: {
     index: true,
@@ -67,11 +67,11 @@ const schemaOrg = {
       name: "Octoflow Labs",
       url: BASE_URL,
       description:
-        "Agencia especializada en implementación de agentes de inteligencia artificial para PYMEs y empresas medianas en Argentina y LATAM.",
-      areaServed: ["Argentina", "México", "Colombia", "LATAM"],
+        "Agencia especializada en implementaciÃ³n de agentes de inteligencia artificial para PYMEs y empresas medianas en Argentina y LATAM.",
+      areaServed: ["Argentina", "MÃ©xico", "Colombia", "LATAM"],
       knowsAbout: [
         "Inteligencia Artificial",
-        "Automatización Empresarial",
+        "AutomatizaciÃ³n Empresarial",
         "Chatbots",
         "Agentes de IA",
         "Procesamiento de Lenguaje Natural",
@@ -93,7 +93,7 @@ const schemaOrg = {
       isPartOf: { "@id": `${BASE_URL}/#website` },
       about: { "@id": `${BASE_URL}/#organization` },
       description:
-        "Implementamos agentes de IA que atienden clientes, cierran ventas y generan reportes automáticos para PYMEs y empresas medianas en Argentina y LATAM.",
+        "Implementamos agentes de IA que atienden clientes, cierran ventas y generan reportes automÃ¡ticos para PYMEs y empresas medianas en Argentina y LATAM.",
       inLanguage: "es-AR",
     },
     {
@@ -101,25 +101,25 @@ const schemaOrg = {
       name: "Agente de Ventas IA",
       provider: { "@id": `${BASE_URL}/#organization` },
       description:
-        "Agente de inteligencia artificial que atiende consultas por WhatsApp o web, califica leads, hace seguimiento automático y cierra más ventas.",
-      serviceType: "Automatización de Ventas",
+        "Agente de inteligencia artificial que atiende consultas por WhatsApp o web, califica leads, hace seguimiento automÃ¡tico y cierra mÃ¡s ventas.",
+      serviceType: "AutomatizaciÃ³n de Ventas",
       areaServed: "Argentina",
     },
     {
       "@type": "Service",
-      name: "Agente de Atención al Cliente IA",
+      name: "Agente de AtenciÃ³n al Cliente IA",
       provider: { "@id": `${BASE_URL}/#organization` },
       description:
         "Agente de IA que resuelve dudas frecuentes, gestiona reclamos y deriva casos complejos a un humano en el momento justo.",
-      serviceType: "Atención al Cliente Automatizada",
+      serviceType: "AtenciÃ³n al Cliente Automatizada",
       areaServed: "Argentina",
     },
     {
       "@type": "Service",
-      name: "Agente de Reportería Automatizada",
+      name: "Agente de ReporterÃ­a Automatizada",
       provider: { "@id": `${BASE_URL}/#organization` },
       description:
-        "Agente de IA que consolida datos de múltiples fuentes y entrega reportes ejecutivos automáticos.",
+        "Agente de IA que consolida datos de mÃºltiples fuentes y entrega reportes ejecutivos automÃ¡ticos.",
       serviceType: "Business Intelligence Automatizado",
       areaServed: "Argentina",
     },
@@ -138,7 +138,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
       </head>
-      <body className={`${montserrat.variable} antialiased`}>{children}</body>
+      <body className={`${manrope.variable} antialiased`}>{children}</body>
     </html>
   );
 }
+
+

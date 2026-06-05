@@ -11,7 +11,7 @@ export default function SectionLabel({
 }: SectionLabelProps) {
   return (
     <span
-      className={`inline-block text-xs font-medium tracking-widest uppercase text-[#5F9ED2] mb-4 ${
+      className={`inline-block text-xs font-medium tracking-widest uppercase text-[var(--flow-violet)] mb-4 ${
         center ? "text-center w-full" : ""
       } ${className}`}
     >

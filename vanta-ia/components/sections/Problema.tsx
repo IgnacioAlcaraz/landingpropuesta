@@ -17,7 +17,7 @@ type IconKey = keyof typeof iconMap;
 
 export default function Problema() {
   return (
-    <section className="bg-black py-24 px-6">
+    <section className="bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial="hidden"
@@ -31,7 +31,7 @@ export default function Problema() {
 
           <motion.h2
             variants={fadeUp}
-            className="text-3xl md:text-[36px] font-light leading-tight tracking-tight text-white mb-12 max-w-xl"
+            className="text-3xl md:text-[36px] font-light leading-tight tracking-tight text-[var(--ink)] mb-12 max-w-xl"
           >
             {problema.h2.prefix}{" "}
             <strong className="font-semibold">{problema.h2.strong}</strong>{" "}
@@ -48,20 +48,20 @@ export default function Problema() {
                 <motion.div
                   key={card.title}
                   variants={fadeUp}
-                  className="flex flex-col gap-4 p-6 rounded-[10px] bg-[#060c18] border border-[rgba(5,113,211,0.15)]"
+                  className="flex flex-col gap-4 p-6 rounded-[var(--radius-md)] bg-[var(--cloud)] border border-[var(--border)]"
                 >
                   <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                    className="w-10 h-10 rounded-[var(--radius-sm)] flex items-center justify-center shrink-0"
                     style={{
-                      background: "rgba(95,158,210,0.1)",
-                      border:     "1px solid rgba(95,158,210,0.2)",
+                      background: "rgba(103,87,255,0.08)",
+                      border:     "1px solid rgba(103,87,255,0.18)",
                     }}
                   >
-                    <Icon size={18} color="#5F9ED2" />
+                    <Icon size={18} color="#6757FF" />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <h3 className="text-[13px] font-semibold text-white">{card.title}</h3>
-                    <p className="text-[12px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                    <h3 className="text-[13px] font-semibold text-[var(--ink)]">{card.title}</h3>
+                    <p className="text-[12px] leading-relaxed text-[var(--slate)]">
                       {card.description}
                     </p>
                   </div>

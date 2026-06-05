@@ -10,38 +10,33 @@ export default function CtaFinal() {
   return (
     <section
       id="contacto"
-      className="relative py-32 px-6 overflow-hidden bg-black"
+      className="relative py-32 px-6 overflow-hidden"
+      style={{
+        background: "linear-gradient(160deg, #EDEAFF 0%, #F7F8FC 55%, #EDEAFF 100%)",
+      }}
     >
-      {/* ── Fondo animado: orbs en movimiento ───────────────────────── */}
+      {/* Orb violeta central suave */}
       <div
         className="orb-drift-1 pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px]"
         style={{
           background:
-            "radial-gradient(ellipse, rgba(95,158,210,0.13) 0%, transparent 65%)",
+            "radial-gradient(ellipse, rgba(103,87,255,0.12) 0%, transparent 65%)",
         }}
       />
       <div
         className="orb-drift-2 pointer-events-none absolute -bottom-32 -right-32 w-[500px] h-[500px]"
         style={{
           background:
-            "radial-gradient(ellipse, rgba(30,52,70,0.5) 0%, transparent 65%)",
-        }}
-      />
-      <div
-        className="orb-drift-1 pointer-events-none absolute -top-24 -left-24 w-[400px] h-[400px] opacity-50"
-        style={{
-          background:
-            "radial-gradient(ellipse, rgba(95,158,210,0.08) 0%, transparent 70%)",
-          animationDelay: "-11s",
+            "radial-gradient(ellipse, rgba(77,63,224,0.08) 0%, transparent 65%)",
         }}
       />
 
-      {/* Línea horizontal decorativa arriba */}
+      {/* Línea decorativa arriba */}
       <div
         className="pointer-events-none absolute top-0 left-0 right-0 h-px"
         style={{
           background:
-            "linear-gradient(90deg, transparent, rgba(95,158,210,0.35), transparent)",
+            "linear-gradient(90deg, transparent, rgba(103,87,255,0.3), transparent)",
         }}
       />
 
@@ -53,15 +48,13 @@ export default function CtaFinal() {
           variants={stagger}
           className="flex flex-col items-center gap-6"
         >
-          {/* Label */}
           <motion.div variants={fadeUp}>
             <SectionLabel center>{ctaFinal.label}</SectionLabel>
           </motion.div>
 
-          {/* H2 */}
           <motion.h2
             variants={fadeUp}
-            className="text-[30px] md:text-[42px] font-light leading-tight tracking-tight text-white"
+            className="text-[30px] md:text-[42px] font-light leading-tight tracking-tight text-[var(--ink)]"
           >
             {ctaFinal.h2.prefix}{" "}
             <strong className="gradient-text font-semibold">
@@ -69,16 +62,13 @@ export default function CtaFinal() {
             </strong>
           </motion.h2>
 
-          {/* Subtítulo */}
           <motion.p
             variants={fadeUp}
-            className="text-[14px] leading-relaxed max-w-sm"
-            style={{ color: "var(--muted)" }}
+            className="text-[14px] leading-relaxed max-w-sm text-[var(--slate)]"
           >
             {ctaFinal.subtitle}
           </motion.p>
 
-          {/* Botón principal con pulse */}
           <motion.div variants={fadeUp}>
             <Button
               variant="primary"
@@ -88,7 +78,6 @@ export default function CtaFinal() {
               {ctaFinal.ctaPrimary}
             </Button>
           </motion.div>
-
         </motion.div>
       </div>
     </section>

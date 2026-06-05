@@ -16,7 +16,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  // Cierra el drawer al hacer click en un link
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -26,7 +25,7 @@ export default function Navbar() {
           fixed top-0 left-0 right-0 z-50 transition-all duration-300
           border-b border-[var(--border)]
           ${scrolled
-            ? "bg-[rgba(0,0,0,0.85)] backdrop-blur-md"
+            ? "bg-[rgba(247,248,252,0.92)] backdrop-blur-md"
             : "bg-transparent"}
         `}
       >
@@ -39,7 +38,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm text-[var(--muted)] hover:text-white transition-colors duration-200"
+                  className="text-sm text-[var(--slate)] hover:text-[var(--ink)] transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -56,7 +55,8 @@ export default function Navbar() {
 
           {/* Hamburger mobile */}
           <button
-            className="md:hidden text-white p-1"
+            type="button"
+            className="md:hidden text-[var(--ink)] p-1"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Abrir menú"
           >
@@ -74,8 +74,8 @@ export default function Navbar() {
       >
         {/* Overlay */}
         <div
-          className={`absolute inset-0 bg-black transition-opacity duration-300 ${
-            menuOpen ? "opacity-60" : "opacity-0"
+          className={`absolute inset-0 bg-[var(--ink)] transition-opacity duration-300 ${
+            menuOpen ? "opacity-40" : "opacity-0"
           }`}
           onClick={closeMenu}
         />
@@ -83,7 +83,7 @@ export default function Navbar() {
         {/* Panel */}
         <div
           className={`
-            absolute top-0 right-0 h-full w-72 bg-[#060c18] border-l border-[var(--border)]
+            absolute top-0 right-0 h-full w-72 bg-white border-l border-[var(--border)]
             flex flex-col pt-20 pb-8 px-6 gap-6
             transition-transform duration-300
             ${menuOpen ? "translate-x-0" : "translate-x-full"}
@@ -94,7 +94,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-base text-[var(--muted)] hover:text-white transition-colors"
+                  className="text-base text-[var(--slate)] hover:text-[var(--ink)] transition-colors"
                   onClick={closeMenu}
                 >
                   {link.label}

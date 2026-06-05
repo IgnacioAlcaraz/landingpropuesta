@@ -31,10 +31,9 @@ function TiltCard({ card }: { card: CardData }) {
   const rotateX = useTransform(springY, [-65, 65], [8, -8]);
   const rotateY = useTransform(springX, [-65, 65], [-8, 8]);
 
-  // Glow que sigue el mouse dentro de la card
   const glowX = useTransform(springX, [-65, 65], [15, 85]);
   const glowY = useTransform(springY, [-65, 65], [15, 85]);
-  const glowBg = useMotionTemplate`radial-gradient(circle at ${glowX}% ${glowY}%, rgba(95,158,210,0.14), transparent 65%)`;
+  const glowBg = useMotionTemplate`radial-gradient(circle at ${glowX}% ${glowY}%, rgba(103,87,255,0.10), transparent 65%)`;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = ref.current?.getBoundingClientRect();
@@ -62,7 +61,7 @@ function TiltCard({ card }: { card: CardData }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
-      className="relative flex flex-col gap-5 p-8 bg-[#060c18] overflow-hidden cursor-default"
+      className="relative flex flex-col gap-5 p-8 bg-white overflow-hidden cursor-default"
     >
       {/* Mouse-follow glow */}
       <motion.div
@@ -70,41 +69,38 @@ function TiltCard({ card }: { card: CardData }) {
         style={{ background: glowBg }}
       />
 
-      {/* Línea superior que aparece on hover */}
+      {/* Línea superior on hover */}
       <div
         className="absolute top-0 left-0 right-0 h-[1px] transition-opacity duration-400"
         style={{
-          background: "linear-gradient(90deg, transparent, #5F9ED2, transparent)",
+          background: "linear-gradient(90deg, transparent, #6757FF, transparent)",
           opacity: hovered ? 1 : 0,
         }}
       />
 
       {/* Número */}
-      <span className="relative text-xs font-mono text-[var(--muted)]">
+      <span className="relative text-xs font-mono text-[var(--slate)]">
         {card.number} —
       </span>
 
       {/* Ícono */}
       <div
-        className="relative w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+        className="relative w-10 h-10 rounded-[var(--radius-sm)] flex items-center justify-center shrink-0"
         style={{
-          background: "rgba(95,158,210,0.1)",
-          border: "1px solid rgba(95,158,210,0.2)",
+          background: "rgba(103,87,255,0.08)",
+          border: "1px solid rgba(103,87,255,0.18)",
         }}
       >
-        <Icon size={18} color="#5F9ED2" />
+        <Icon size={18} color="#6757FF" />
       </div>
 
       {/* Título */}
-      <h3 className="relative text-[16px] font-semibold text-white">
+      <h3 className="relative text-[16px] font-semibold text-[var(--ink)]">
         {card.title}
       </h3>
 
       {/* Descripción */}
-      <p
-        className="relative text-[13px] leading-relaxed flex-1"
-        style={{ color: "var(--muted)" }}
-      >
+      <p className="relative text-[13px] leading-relaxed flex-1 text-[var(--slate)]">
         {card.description}
       </p>
 
@@ -113,10 +109,10 @@ function TiltCard({ card }: { card: CardData }) {
         {card.tags.map((tag) => (
           <span
             key={tag}
-            className="text-[12px] text-[#5F9ED2] px-2.5 py-1 rounded-full"
+            className="text-[12px] text-[var(--flow-violet)] px-2.5 py-1 rounded-full"
             style={{
-              background: "rgba(95,158,210,0.1)",
-              border: "1px solid rgba(95,158,210,0.3)",
+              background: "rgba(103,87,255,0.07)",
+              border: "1px solid rgba(103,87,255,0.20)",
             }}
           >
             {tag}
@@ -134,7 +130,7 @@ export default function Soluciones() {
       id="servicios"
       className="py-24 px-6"
       style={{
-        background: "rgba(5,113,211,0.06)",
+        background: "rgba(103,87,255,0.03)",
         borderTop: "0.5px solid var(--border)",
         borderBottom: "0.5px solid var(--border)",
       }}
@@ -152,14 +148,13 @@ export default function Soluciones() {
 
           <motion.h2
             variants={fadeUp}
-            className="text-3xl md:text-[36px] font-light leading-tight tracking-tight text-white mb-12 max-w-2xl"
+            className="text-3xl md:text-[36px] font-light leading-tight tracking-tight text-[var(--ink)] mb-12 max-w-2xl"
           >
             {soluciones.h2.prefix}{" "}
             <strong className="font-semibold">{soluciones.h2.strong}</strong>{" "}
             {soluciones.h2.suffix}
           </motion.h2>
 
-          {/* Grid con perspectiva para que el tilt luzca en contexto */}
           <motion.div
             variants={staggerSlow}
             className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--border)]"

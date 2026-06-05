@@ -7,7 +7,7 @@ import { fadeUp, stagger } from "@/lib/motion";
 
 export default function Proceso() {
   return (
-    <section id="proceso" className="bg-black py-24 px-6">
+    <section id="proceso" className="bg-[var(--cloud)] py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial="hidden"
@@ -21,7 +21,7 @@ export default function Proceso() {
 
           <motion.h2
             variants={fadeUp}
-            className="text-3xl md:text-[36px] font-light leading-tight tracking-tight text-white mb-12 max-w-xl"
+            className="text-3xl md:text-[36px] font-light leading-tight tracking-tight text-[var(--ink)] mb-12 max-w-xl"
           >
             {proceso.h2.prefix}{" "}
             <strong className="font-semibold">{proceso.h2.strong}</strong>{" "}
@@ -56,21 +56,15 @@ export default function Proceso() {
                   delay: 0.3 + i * 0.22,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="flex items-start gap-6 py-7 pl-0"
-                style={{
-                  borderBottom:
-                    i < proceso.steps.length - 1
-                      ? "0.5px solid var(--border)"
-                      : "none",
-                }}
+                className="flex items-start gap-6 py-7 pl-0 border-b border-[var(--border)] last:border-none"
               >
                 {/* Círculo numerado */}
                 <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-semibold shrink-0 text-[#5F9ED2] relative z-10"
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-semibold shrink-0 text-[var(--flow-violet)] relative z-10"
                   style={{
-                    background: "#000000",
-                    border: "1px solid rgba(95,158,210,0.4)",
-                    boxShadow: "0 0 14px rgba(95,158,210,0.2)",
+                    background: "#FFFFFF",
+                    border: "1px solid rgba(103,87,255,0.35)",
+                    boxShadow: "0 0 14px rgba(103,87,255,0.12)",
                   }}
                 >
                   {step.number}
@@ -78,21 +72,18 @@ export default function Proceso() {
 
                 {/* Texto */}
                 <div className="flex flex-col gap-1.5 flex-1 min-w-0 pt-1">
-                  <h3 className="text-[15px] font-semibold text-white">
+                  <h3 className="text-[15px] font-semibold text-[var(--ink)]">
                     {step.title}
                   </h3>
-                  <p
-                    className="text-[13px] leading-relaxed"
-                    style={{ color: "var(--muted)" }}
-                  >
+                  <p className="text-[13px] leading-relaxed text-[var(--slate)]">
                     {step.description}
                   </p>
                 </div>
 
                 {/* Duración */}
                 <span
-                  className="text-[12px] font-mono shrink-0 pt-1"
-                  style={{ color: "rgba(95,158,210,0.65)" }}
+                  className="text-[12px] font-mono shrink-0 pt-1 text-[var(--flow-violet)]"
+                  style={{ opacity: 0.65 }}
                 >
                   {step.duration}
                 </span>

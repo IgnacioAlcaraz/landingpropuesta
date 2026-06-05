@@ -6,13 +6,12 @@ import LogoPill from "@/components/ui/LogoPill";
 import { clientes } from "@/content/copy";
 import { fadeUp, stagger } from "@/lib/motion";
 
-// Duplicamos los ítems para loop perfecto
 const row1 = [...clientes.items, ...clientes.items];
 const row2 = [...clientes.items, ...clientes.items];
 
 export default function Clientes() {
   return (
-    <section id="clientes" className="bg-black py-24">
+    <section id="clientes" className="bg-white py-24">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial="hidden"
@@ -26,7 +25,7 @@ export default function Clientes() {
 
           <motion.h2
             variants={fadeUp}
-            className="text-3xl md:text-[36px] font-light leading-tight tracking-tight text-white mb-3 max-w-xl"
+            className="text-3xl md:text-[36px] font-light leading-tight tracking-tight text-[var(--ink)] mb-3 max-w-xl"
           >
             {clientes.h2.prefix}{" "}
             <strong className="font-semibold">{clientes.h2.strong}</strong>
@@ -34,8 +33,7 @@ export default function Clientes() {
 
           <motion.p
             variants={fadeUp}
-            className="text-[14px] mb-12 max-w-md"
-            style={{ color: "var(--muted)" }}
+            className="text-[14px] mb-12 max-w-md text-[var(--slate)]"
           >
             {clientes.subtitle}
           </motion.p>
@@ -44,23 +42,23 @@ export default function Clientes() {
 
       {/* ── Marquee ─────────────────────────────────────────────────── */}
       <div className="marquee-track relative overflow-hidden">
-        {/* Fades laterales — cubren hasta el margen del contenedor max-w-6xl + px-6 */}
+        {/* Fades laterales */}
         <div
           className="pointer-events-none absolute left-0 top-0 bottom-0 z-10"
           style={{
             width: "calc((100vw - min(100vw, 72rem)) / 2 + 1.5rem + 3rem)",
-            background: "linear-gradient(to right, #000000 65%, transparent)",
+            background: "linear-gradient(to right, #FFFFFF 65%, transparent)",
           }}
         />
         <div
           className="pointer-events-none absolute right-0 top-0 bottom-0 z-10"
           style={{
             width: "calc((100vw - min(100vw, 72rem)) / 2 + 1.5rem + 3rem)",
-            background: "linear-gradient(to left, #000000 65%, transparent)",
+            background: "linear-gradient(to left, #FFFFFF 65%, transparent)",
           }}
         />
 
-        {/* Fila 1 — izquierda */}
+        {/* Fila 1 */}
         <div className="flex gap-3 mb-3">
           <div className="flex gap-3 animate-marquee-left">
             {row1.map((item, i) => (
@@ -76,7 +74,7 @@ export default function Clientes() {
           </div>
         </div>
 
-        {/* Fila 2 — derecha */}
+        {/* Fila 2 */}
         <div className="flex gap-3">
           <div className="flex gap-3 animate-marquee-right">
             {row2.map((item, i) => (
@@ -93,7 +91,7 @@ export default function Clientes() {
         </div>
       </div>
 
-      {/* Stats debajo */}
+      {/* Stats */}
       <div className="max-w-6xl mx-auto px-6 mt-14">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -104,10 +102,8 @@ export default function Clientes() {
         >
           {clientes.stats.map((stat) => (
             <div key={stat.label} className="flex flex-col items-center md:items-start gap-0.5">
-              <span className="text-2xl font-semibold text-white">{stat.value}</span>
-              <span className="text-[13px]" style={{ color: "var(--muted)" }}>
-                {stat.label}
-              </span>
+              <span className="text-2xl font-semibold text-[var(--ink)]">{stat.value}</span>
+              <span className="text-[13px] text-[var(--slate)]">{stat.label}</span>
             </div>
           ))}
         </motion.div>

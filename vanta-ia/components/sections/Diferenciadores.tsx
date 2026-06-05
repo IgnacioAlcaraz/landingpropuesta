@@ -8,11 +8,10 @@ import { fadeUp, stagger } from "@/lib/motion";
 export default function Diferenciadores() {
   return (
     <section
-      className="py-24 px-6"
+      className="py-24 px-6 bg-[var(--cloud)]"
       style={{
-        background:   "linear-gradient(180deg, rgba(5,113,211,0.10) 0%, rgba(0,0,0,0) 100%)",
-        borderTop:    "0.5px solid rgba(95,158,210,0.25)",
-        borderBottom: "0.5px solid rgba(95,158,210,0.25)",
+        borderTop:    "0.5px solid var(--border)",
+        borderBottom: "0.5px solid var(--border)",
       }}
     >
       <div className="max-w-6xl mx-auto">
@@ -28,7 +27,7 @@ export default function Diferenciadores() {
 
           <motion.h2
             variants={fadeUp}
-            className="text-3xl md:text-[36px] font-light leading-tight tracking-tight text-white mb-12 max-w-xl"
+            className="text-3xl md:text-[36px] font-light leading-tight tracking-tight text-[var(--ink)] mb-12 max-w-xl"
           >
             {diferenciadores.h2.line1}
             <br />
@@ -46,12 +45,11 @@ export default function Diferenciadores() {
                 className="flex items-start gap-3"
               >
                 <div
-                  className="w-2 h-2 rounded-full shrink-0 mt-[5px]"
-                  style={{ background: "#5F9ED2" }}
+                  className="w-2 h-2 rounded-full shrink-0 mt-[5px] bg-[var(--flow-violet)]"
                 />
                 <div className="flex flex-col gap-1">
-                  <h3 className="text-[13px] font-semibold text-white">{item.title}</h3>
-                  <p className="text-[12px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  <h3 className="text-[13px] font-semibold text-[var(--ink)]">{item.title}</h3>
+                  <p className="text-[12px] leading-relaxed text-[var(--slate)]">
                     {item.description}
                   </p>
                 </div>

@@ -2,32 +2,48 @@
 
 /* ─── Tema Tailwind v4 ─────────────────────────────────────────────── */
 @theme inline {
-  --color-black:  #000000;
-  --color-dark:   #060c18;
-  --color-navy:   #0571D3;
-  --color-blue:   #5F9ED2;
-  --color-white:  #FFFFFF;
-  --font-sans: var(--font-montserrat);
+  --color-flow-violet: #6757FF;
+  --color-deep-violet: #4D3FE0;
+  --color-lavender:    #EDEAFF;
+  --color-ink:         #1F2430;
+  --color-slate:       #667085;
+  --color-cloud:       #F7F8FC;
+  --color-white:       #FFFFFF;
+  --font-sans: var(--font-manrope);
 }
 
-/* ─── Variables CSS globales ───────────────────────────────────────── */
+/* ─── Variables CSS globales (design tokens) ───────────────────────── */
 :root {
-  --black:  #000000;
-  --dark:   #060c18;
-  --navy:   #0571D3;
-  --blue:   #5F9ED2;
-  --white:  #FFFFFF;
-  --muted:  rgba(255, 255, 255, 0.45);
-  --border: rgba(95, 158, 210, 0.18);
+  /* Primarios */
+  --flow-violet: #6757FF;
+  --deep-violet: #4D3FE0;
+  --lavender:    #EDEAFF;
+  /* Neutros */
+  --ink:   #1F2430;
+  --slate: #667085;
+  --cloud: #F7F8FC;
+  --white: #FFFFFF;
+  /* Semánticos */
+  --success: #2EB67D;
+  --warning: #F5A524;
+  --error:   #E5484D;
+  /* Alias de compatibilidad */
+  --muted:  #667085;
+  --border: rgba(103, 87, 255, 0.12);
+  /* Radios */
+  --radius-sm:   8px;
+  --radius-md:   16px;
+  --radius-lg:   24px;
+  --radius-hero: 32px;
 }
 
 /* ─── Reset base ───────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background-color: var(--black);
-  color: var(--white);
-  font-family: var(--font-montserrat), system-ui, sans-serif;
+  background-color: var(--cloud);
+  color: var(--ink);
+  font-family: var(--font-manrope), 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -37,14 +53,14 @@ body {
 ══════════════════════════════════════════════════════════════════ */
 .hero-grid {
   background-image:
-    radial-gradient(circle, rgba(95, 158, 210, 0.07) 1px, transparent 1px);
+    radial-gradient(circle, rgba(103, 87, 255, 0.08) 1px, transparent 1px);
   background-size: 42px 42px;
   animation: grid-breathe 9s ease-in-out infinite;
 }
 
 @keyframes grid-breathe {
-  0%, 100% { opacity: 0.4; }
-  50%       { opacity: 1;   }
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 1;    }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -69,8 +85,8 @@ body {
 .shimmer-badge {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(95, 158, 210, 0.35);
-  background: rgba(95, 158, 210, 0.08);
+  border: 1px solid rgba(103, 87, 255, 0.3);
+  background: rgba(103, 87, 255, 0.07);
 }
 .shimmer-badge::after {
   content: "";
@@ -79,7 +95,7 @@ body {
   background: linear-gradient(
     105deg,
     transparent 35%,
-    rgba(95, 158, 210, 0.3) 50%,
+    rgba(103, 87, 255, 0.25) 50%,
     transparent 65%
   );
   animation: shimmer-sweep 3.5s ease-in-out infinite;
@@ -90,17 +106,17 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   GRADIENT TEXT (blue animated)
+   GRADIENT TEXT (violet animado)
 ══════════════════════════════════════════════════════════════════ */
 .gradient-text {
   background: linear-gradient(
     90deg,
-    #5F9ED2 0%,
-    #a8d4f5 25%,
-    #ffffff 45%,
-    #5F9ED2 60%,
-    #3a7db5 80%,
-    #5F9ED2 100%
+    #6757FF 0%,
+    #9B8DFF 25%,
+    #4D3FE0 45%,
+    #6757FF 60%,
+    #8B7AFF 80%,
+    #6757FF 100%
   );
   background-size: 250% auto;
   -webkit-background-clip: text;
@@ -126,9 +142,9 @@ body {
    PULSE RING (CTA button)
 ══════════════════════════════════════════════════════════════════ */
 @keyframes pulse-ring {
-  0%  { box-shadow: 0 0 0 0px  rgba(95, 158, 210, 0.55); }
-  70% { box-shadow: 0 0 0 18px rgba(95, 158, 210, 0);    }
-  100%{ box-shadow: 0 0 0 0px  rgba(95, 158, 210, 0);    }
+  0%  { box-shadow: 0 0 0 0px  rgba(103, 87, 255, 0.5); }
+  70% { box-shadow: 0 0 0 18px rgba(103, 87, 255, 0);   }
+  100%{ box-shadow: 0 0 0 0px  rgba(103, 87, 255, 0);   }
 }
 .btn-pulse { animation: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
 
@@ -145,7 +161,7 @@ body {
   background: linear-gradient(
     105deg,
     transparent,
-    rgba(255, 255, 255, 0.28),
+    rgba(255, 255, 255, 0.22),
     transparent
   );
   transform: translateX(-160%) skewX(-15deg);
@@ -174,8 +190,8 @@ body {
 .timeline-line {
   background: linear-gradient(
     to bottom,
-    #5F9ED2,
-    rgba(95, 158, 210, 0.08)
+    #6757FF,
+    rgba(103, 87, 255, 0.06)
   );
   transform-origin: top;
 }
@@ -183,5 +199,5 @@ body {
 /* ═══════════════════════════════════════════════════════════════════
    UTILIDADES GENERALES
 ══════════════════════════════════════════════════════════════════ */
-.text-muted   { color: var(--muted);  }
-.border-subtle{ border-color: var(--border); }
+.text-muted    { color: var(--muted);  }
+.border-subtle { border-color: var(--border); }
