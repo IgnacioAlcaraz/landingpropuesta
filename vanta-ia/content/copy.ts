@@ -69,34 +69,42 @@ export const problema = {
 export const soluciones = {
   label: "· Lo que hacemos",
   h2: {
-    prefix: "Tres tipos de",
-    strong: "agentes",
-    suffix: "que transforman tu operación",
+    prefix: "Nuestras",
+    strong: "soluciones",
+    suffix: "de automatización con IA",
   },
   cards: [
     {
       number:      "01",
       icon:        "MessageSquare",
-      title:       "Agente de Ventas",
+      title:       "Agente de Atención con IA",
       description:
-        "Atiende consultas por WhatsApp o web, califica leads, hace seguimiento automático y cierra más ventas.",
-      tags:        ["WhatsApp", "Web", "CRM"],
+        "Implementamos un agente conectado a tu información que responde las consultas de tus clientes al instante, con precio, stock y disponibilidad actualizados — las 24 horas.",
+      tags:        ["WhatsApp", "24/7", "Velocidad"],
     },
     {
       number:      "02",
-      icon:        "Target",
-      title:       "Agente de Atención",
+      icon:        "RefreshCw",
+      title:       "Recuperación de Leads",
       description:
-        "Resuelve dudas frecuentes, gestiona reclamos y deriva casos complejos a un humano en el momento justo.",
-      tags:        ["Soporte", "FAQ", "Derivación"],
+        "Implementamos un agente que detecta a los clientes que consultaron y no compraron, y retoma el contacto en el momento oportuno. Hasta 1 de cada 4 leads se pueden recuperar.",
+      tags:        ["Seguimiento", "Activación", "Ventas"],
     },
     {
       number:      "03",
       icon:        "BarChart2",
-      title:       "Agente de Reportería",
+      title:       "Asistente del Negocio IA",
       description:
-        "Consolida datos de múltiples fuentes y entrega reportes ejecutivos automáticos.",
-      tags:        ["Analytics", "Sheets", "Alertas"],
+        "Implementamos un asistente con IA que responde al instante tus consultas de stock, ventas y movimientos — sin abrir planillas ni revisar sistemas.",
+      tags:        ["Stock", "Ventas", "Reportes"],
+    },
+    {
+      number:      "04",
+      icon:        "Zap",
+      title:       "Automatización Integral de Procesos",
+      description:
+        "Revisamos tu negocio a fondo, detectamos qué te hace perder tiempo y automatizamos tus procesos de punta a punta, listos para escalar.",
+      tags:        ["Diagnóstico", "Automatización", "Escala"],
     },
   ],
 } as const;

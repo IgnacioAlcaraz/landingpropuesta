@@ -8,12 +8,12 @@ import {
   useSpring,
   useMotionTemplate,
 } from "framer-motion";
-import { MessageSquare, Target, BarChart2 } from "lucide-react";
+import { MessageSquare, RefreshCw, BarChart2, Zap } from "lucide-react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { soluciones } from "@/content/copy";
 import { fadeUp, staggerSlow } from "@/lib/motion";
 
-const iconMap = { MessageSquare, Target, BarChart2 } as const;
+const iconMap = { MessageSquare, RefreshCw, BarChart2, Zap } as const;
 type IconKey = keyof typeof iconMap;
 type CardData = (typeof soluciones.cards)[number];
 
@@ -157,7 +157,7 @@ export default function Soluciones() {
 
           <motion.div
             variants={staggerSlow}
-            className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--border)]"
+            className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--border)]"
             style={{ perspective: "1200px" }}
           >
             {soluciones.cards.map((card) => (
